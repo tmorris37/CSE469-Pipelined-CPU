@@ -1,0 +1,13 @@
+
+module forwarding_unit (EX_Rn, EX_Rm, MEM_Rd, WB_Rd, ALU_Src, forwardA, forwardB);
+
+	input  logic [4:0] EX_Rn, EX_Rm;
+	input  logic [4:0] MEM_Rd, WB_Rd;
+	input  logic ALU_Src;
+
+	output logic [1:0] forwardA, forwardB;
+
+	
+
+
+endmodule  // forwarding_unit

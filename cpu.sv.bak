@@ -1,0 +1,56 @@
+
+module cpu (clk, reset, instruction, PC, mem_addr, mem_MemWrite, mem_MemRead, mem_in_data, mem_xfer_size, mem_out_data);
+	input  logic clk, reset;
+	input  logic [31:0] instruction;
+	output logic [63:0] PC;
+	
+	
+	output logic	[63:0]	mem_addr;
+	output logic				mem_MemWrite;
+	output logic				mem_MemRead;
+	output logic	[63:0]	mem_in_data;
+	output logic	[3:0]		mem_xfer_size;
+	input  logic	[63:0]	mem_out_data;
+	
+	// ---------------- IF ----------------
+	
+	logic [63:0] IF_PC;
+	
+	logic [31:0] IF_Instruction
+	
+	// ========== IF/ID Register ==========
+	
+	IF_ID_Register IF_ID ();
+	
+	// ---------------- ID ----------------
+	
+	logic [63:0] ID_PC;
+	
+	logic [63:0] ID_Read_Data_1, ID_Read_Data_2;
+	
+	logic [63:0] ID_Sign_Extended;
+	
+	control_unit c_unit ();
+	
+	
+	// ========== ID/EX Register ==========
+	
+	ID_EX_Register ID_EX ();
+	
+	// ---------------- EX ----------------
+	
+	
+	
+	// ========== EX/MEM Register =========
+	
+	EX_MEM_Register EX_MEM ();
+	
+	// --------------- MEM ----------------
+	
+	
+	
+	// ========== MEM/WB Register =========
+	
+	MEM_WB_Register MEM_WB ();
+	
+endmodule  // cpu

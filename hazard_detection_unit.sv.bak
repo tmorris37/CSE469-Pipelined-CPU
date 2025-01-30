@@ -1,0 +1,9 @@
+
+module hazard_detection_unit ();
+	input  logic [4:0] ID_Read_Reg_1, ID_Read_Reg_2;
+	input  logic [4:0] EX_Write_Reg;
+	input  logic EX_MemRead;
+
+
+
+endmodule  // hazard_detection_unit
